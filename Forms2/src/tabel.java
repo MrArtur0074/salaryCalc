@@ -42,7 +42,7 @@ public class tabel extends JFrame {
 	public tabel() {
 		setTitle("Учет рабочего времени");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 303, 313);
+		setBounds(100, 100, 333, 282);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -50,29 +50,32 @@ public class tabel extends JFrame {
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setToolTipText("");
-		comboBox.setBounds(10, 65, 252, 20);
+		comboBox.setBounds(10, 65, 284, 20);
 		contentPane.add(comboBox);
 		comboBox.addItem("Альметьев Афанасий Викторович");
 		comboBox.addItem("Савельева Наталья Владимировна");
+		comboBox.addItem("Григорьев Николай Александрович");
+		comboBox.addItem("Максимова Елизавета Петровна");
+		comboBox.addItem("Калинин Василий Петрович");
 		
 		textField = new JTextField();
 		textField.setText("10.04.2018");
-		textField.setBounds(176, 11, 86, 20);
+		textField.setBounds(221, 11, 86, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		JLabel label = new JLabel("Дата:");
-		label.setBounds(128, 14, 38, 14);
+		label.setBounds(173, 14, 38, 14);
 		contentPane.add(label);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(176, 123, 86, 20);
+		textField_1.setBounds(208, 123, 86, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
 		JLabel label_1 = new JLabel("Коэффициент эффективности:");
 		label_1.setHorizontalAlignment(SwingConstants.LEFT);
-		label_1.setBounds(10, 126, 173, 14);
+		label_1.setBounds(10, 126, 201, 14);
 		contentPane.add(label_1);
 		
 		JDesktopPane desktopPane = new JDesktopPane();
@@ -80,7 +83,7 @@ public class tabel extends JFrame {
 		contentPane.add(desktopPane);
 		
 		JCheckBox checkBox = new JCheckBox("Явился на рабочее место");
-		checkBox.setBounds(10, 92, 173, 23);
+		checkBox.setBounds(10, 92, 240, 23);
 		contentPane.add(checkBox);
 		
 		JLabel label_2 = new JLabel("Сотрудник");
@@ -92,11 +95,15 @@ public class tabel extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton.setBounds(10, 164, 252, 23);
+		btnNewButton.setBounds(10, 164, 284, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Закрыть");
-		btnNewButton_1.setBounds(173, 233, 89, 23);
+		btnNewButton_1.setBounds(194, 209, 103, 23);
 		contentPane.add(btnNewButton_1);
+		
+		JButton button = new JButton("Загрузить");
+		button.setBounds(10, 10, 130, 23);
+		contentPane.add(button);
 	}
 }
