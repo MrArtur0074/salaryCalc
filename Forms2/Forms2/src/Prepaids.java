@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class tabel extends JFrame {
+public class Prepaids extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -27,7 +27,7 @@ public class tabel extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					tabel frame = new tabel();
+					Prepaids frame = new Prepaids();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,64 +39,61 @@ public class tabel extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public tabel() {
-		setTitle("Учет рабочего времени");
+	public Prepaids() {
+		setTitle("Работа с авансами");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 303, 313);
+		setBounds(100, 100, 374, 180);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setToolTipText("");
-		comboBox.setBounds(10, 65, 252, 20);
+		comboBox.setBounds(89, 11, 261, 20);
 		contentPane.add(comboBox);
 		comboBox.addItem("Альметьев Афанасий Викторович");
 		comboBox.addItem("Савельева Наталья Владимировна");
 		
 		textField = new JTextField();
-		textField.setText("10.04.2018");
-		textField.setBounds(176, 11, 86, 20);
+		textField.setBounds(89, 35, 86, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JLabel label = new JLabel("Дата:");
-		label.setBounds(128, 14, 38, 14);
+		JLabel label = new JLabel("Дата выдачи:");
+		label.setBounds(10, 38, 72, 14);
 		contentPane.add(label);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(176, 123, 86, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
-		
-		JLabel label_1 = new JLabel("Коэффициент эффективности:");
-		label_1.setHorizontalAlignment(SwingConstants.LEFT);
-		label_1.setBounds(10, 126, 173, 14);
-		contentPane.add(label_1);
 		
 		JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setBounds(146, 209, 130, -79);
 		contentPane.add(desktopPane);
 		
-		JCheckBox checkBox = new JCheckBox("Явился на рабочее место");
-		checkBox.setBounds(10, 92, 173, 23);
-		contentPane.add(checkBox);
-		
-		JLabel label_2 = new JLabel("Сотрудник");
-		label_2.setBounds(10, 40, 145, 14);
+		JLabel label_2 = new JLabel("Сотрудник:");
+		label_2.setBounds(10, 14, 69, 14);
 		contentPane.add(label_2);
 		
-		JButton btnNewButton = new JButton("Сохранить");
+		JButton btnNewButton = new JButton("Выйти в меню");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton.setBounds(10, 164, 252, 23);
+		btnNewButton.setBounds(127, 100, 103, 23);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Закрыть");
-		btnNewButton_1.setBounds(173, 233, 89, 23);
-		contentPane.add(btnNewButton_1);
+		JLabel label_1 = new JLabel("Сумма аванса:");
+		label_1.setBounds(185, 39, 86, 14);
+		contentPane.add(label_1);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(264, 35, 86, 20);
+		contentPane.add(textField_1);
+		
+		JButton button = new JButton("Сохранить запись");
+		button.setBounds(10, 66, 165, 23);
+		contentPane.add(button);
+		
+		JButton button_1 = new JButton("Распечатать расписку");
+		button_1.setBounds(195, 66, 155, 23);
+		contentPane.add(button_1);
 	}
 }
