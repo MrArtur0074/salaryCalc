@@ -6,11 +6,15 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 import javax.swing.JButton;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import java.awt.Color;
+import java.awt.Component;
+
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -49,7 +53,7 @@ public class SalaryCalc extends JFrame {
 	 * Create the frame.
 	 */
 	public SalaryCalc() {
-		setTitle("Расчет заработной платы");
+		setTitle("Р Р°СЃС‡РµС‚ Р·Р°СЂР°Р±РѕС‚РЅРѕР№ РїР»Р°С‚С‹");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1280, 665);
 		getContentPane().setLayout(null);
@@ -65,7 +69,20 @@ public class SalaryCalc extends JFrame {
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		
-		table = new JTable();
+		JTable table = new JTable(){
+		       @Override
+		       public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
+		           Component component = super.prepareRenderer(renderer, row, column);
+		           int rendererWidth = component.getPreferredSize().width;
+		           TableColumn tableColumn = getColumnModel().getColumn(column);
+		           tableColumn.setPreferredWidth(Math.max(rendererWidth + getIntercellSpacing().width, tableColumn.getPreferredWidth()));
+		           return component;
+		        }
+		    };
+		table.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		
+		scrollPane.setViewportView(table);
 		table.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		scrollPane.setViewportView(table);
 		table.setCellSelectionEnabled(true);
@@ -78,34 +95,7 @@ public class SalaryCalc extends JFrame {
 				"\u041D\u043E\u043C\u0435\u0440 \u043F\u043E \u043F\u043E\u0440\u044F\u0434\u043A\u0443", "\u0422\u0430\u0431\u0435\u043B\u044C\u043D\u044B\u0439 \u043D\u043E\u043C\u0435\u0440", "\u0424\u0430\u043C\u0438\u043B\u0438\u044F, \u0438\u043D\u0438\u0446\u0438\u0430\u043B\u044B", "\u0414\u043E\u043B\u0436\u043D\u043E\u0441\u0442\u044C", "\u041E\u043A\u043B\u0430\u0434", "\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043E \u0431\u0443\u0434\u043D\u0435\u0439", "\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043E \u0432\u044B\u0445\u043E\u0434\u043D\u044B\u0445", "\u0417\u0430\u0440\u0430\u0431\u043E\u0442\u043D\u0430\u044F \u043F\u043B\u0430\u0442\u0430", "\u041F\u0440\u0435\u043C\u0438\u044F", "\u0412\u0441\u0435\u0433\u043E \u043D\u0430\u0447\u0438\u0441\u043B\u0435\u043D\u0438\u0439, \u0440\u0443\u0431.", "\u0423\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435 - \u043D\u0430\u043B\u043E\u0433 \u043D\u0430 \u0434\u043E\u0445\u043E\u0434\u044B, \u0440\u0443\u0431.", "\u0423\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435 \u0437\u0430 \u0430\u0432\u0430\u043D\u0441, \u0440\u0443\u0431.", "\u0412\u0441\u0435\u0433\u043E \u0443\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0439, \u0440\u0443\u0431.", "\u0418\u0442\u043E\u0433\u043E \u043A \u0432\u044B\u043F\u043B\u0430\u0442\u0435, \u0440\u0443\u0431"
 			}
 		));
-		table.getColumnModel().getColumn(0).setPreferredWidth(105);
-		table.getColumnModel().getColumn(0).setMinWidth(105);
-		table.getColumnModel().getColumn(1).setPreferredWidth(105);
-		table.getColumnModel().getColumn(1).setMinWidth(105);
-		table.getColumnModel().getColumn(2).setPreferredWidth(125);
-		table.getColumnModel().getColumn(2).setMinWidth(125);
-		table.getColumnModel().getColumn(3).setPreferredWidth(125);
-		table.getColumnModel().getColumn(3).setMinWidth(125);
-		table.getColumnModel().getColumn(4).setPreferredWidth(105);
-		table.getColumnModel().getColumn(4).setMinWidth(105);
-		table.getColumnModel().getColumn(5).setPreferredWidth(115);
-		table.getColumnModel().getColumn(5).setMinWidth(115);
-		table.getColumnModel().getColumn(6).setPreferredWidth(130);
-		table.getColumnModel().getColumn(6).setMinWidth(130);
-		table.getColumnModel().getColumn(7).setPreferredWidth(105);
-		table.getColumnModel().getColumn(7).setMinWidth(105);
-		table.getColumnModel().getColumn(8).setPreferredWidth(105);
-		table.getColumnModel().getColumn(8).setMinWidth(105);
-		table.getColumnModel().getColumn(9).setPreferredWidth(135);
-		table.getColumnModel().getColumn(9).setMinWidth(135);
-		table.getColumnModel().getColumn(10).setPreferredWidth(200);
-		table.getColumnModel().getColumn(10).setMinWidth(200);
-		table.getColumnModel().getColumn(11).setPreferredWidth(145);
-		table.getColumnModel().getColumn(11).setMinWidth(145);
-		table.getColumnModel().getColumn(12).setPreferredWidth(130);
-		table.getColumnModel().getColumn(12).setMinWidth(130);
-		table.getColumnModel().getColumn(13).setPreferredWidth(125);
-		table.getColumnModel().getColumn(13).setMinWidth(125);
+		
 		
 		JButton button = new JButton("\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C \u0434\u0430\u043D\u043D\u044B\u0435 \u0437\u0430 \u043E\u0442\u0447\u0435\u0442\u043D\u044B\u0439 \u043F\u0435\u0440\u0438\u043E\u0434");
 		button.setFont(new Font("Times New Roman", Font.PLAIN, 12));
