@@ -14,6 +14,7 @@ import java.awt.Color;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class SalaryCalc extends JFrame {
 
@@ -65,6 +66,7 @@ public class SalaryCalc extends JFrame {
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		
 		table = new JTable();
+		table.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		scrollPane.setViewportView(table);
 		table.setCellSelectionEnabled(true);
 		table.setFillsViewportHeight(true);
@@ -105,101 +107,110 @@ public class SalaryCalc extends JFrame {
 		table.getColumnModel().getColumn(13).setPreferredWidth(125);
 		table.getColumnModel().getColumn(13).setMinWidth(125);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(424, 11, 280, 59);
-		panel.add(panel_1);
-		panel_1.setLayout(null);
-		
-		JLabel label_3 = new JLabel("\u0441:");
-		label_3.setBounds(10, 34, 9, 14);
-		panel_1.add(label_3);
-		
-		textField_6 = new JTextField();
-		textField_6.setBounds(170, 28, 100, 20);
-		panel_1.add(textField_6);
-		textField_6.setColumns(10);
-		
-		textField_5 = new JTextField();
-		textField_5.setBounds(26, 28, 100, 20);
-		panel_1.add(textField_5);
-		textField_5.setColumns(10);
-		
-		JLabel label_4 = new JLabel("\u043F\u043E:");
-		label_4.setBounds(146, 34, 16, 14);
-		panel_1.add(label_4);
-		
-		JLabel label_2 = new JLabel("\u041E\u0442\u0447\u0435\u0442\u043D\u044B\u0439 \u043F\u0435\u0440\u0438\u043E\u0434");
-		label_2.setBounds(10, 11, 260, 14);
-		panel_1.add(label_2);
-		label_2.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(10, 11, 164, 42);
-		panel.add(panel_2);
-		panel_2.setLayout(null);
-		
-		JLabel label = new JLabel("\u041D\u043E\u043C\u0435\u0440 \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0430:");
-		label.setBounds(10, 17, 98, 14);
-		panel_2.add(label);
-		
-		textField_3 = new JTextField();
-		textField_3.setBounds(118, 14, 35, 20);
-		panel_2.add(textField_3);
-		textField_3.setColumns(10);
-		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(184, 11, 230, 42);
-		panel.add(panel_3);
-		panel_3.setLayout(null);
-		
-		JLabel label_1 = new JLabel("\u0414\u0430\u0442\u0430 \u0441\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u044F:");
-		label_1.setBounds(10, 14, 98, 14);
-		panel_3.add(label_1);
-		
-		textField_4 = new JTextField();
-		textField_4.setBounds(118, 11, 100, 20);
-		panel_3.add(textField_4);
-		textField_4.setColumns(10);
-		
 		JButton button = new JButton("\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C \u0434\u0430\u043D\u043D\u044B\u0435 \u0437\u0430 \u043E\u0442\u0447\u0435\u0442\u043D\u044B\u0439 \u043F\u0435\u0440\u0438\u043E\u0434");
+		button.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		button.setBounds(714, 11, 260, 25);
 		panel.add(button);
 		
 		JButton button_1 = new JButton("\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C \u0433\u043E\u0442\u043E\u0432\u0443\u044E \u0440\u0430\u0441\u0447\u0435\u0442\u043D\u0443\u044E \u0432\u0435\u0434\u043E\u043C\u043E\u0441\u0442\u044C");
+		button_1.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		button_1.setBounds(714, 45, 260, 25);
 		panel.add(button_1);
 		
 		JButton button_2 = new JButton("\u041F\u0435\u0440\u0435\u0441\u0447\u0438\u0442\u0430\u0442\u044C");
+		button_2.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		button_2.setBounds(10, 530, 134, 25);
 		panel.add(button_2);
 		
 		JButton button_3 = new JButton("\u041F\u0440\u043E\u0441\u043C\u043E\u0442\u0440 \u0440\u0430\u0441\u0447\u0435\u0442\u043D\u043E\u0439 \u0432\u0435\u0434\u043E\u043C\u043E\u0441\u0442\u0438");
+		button_3.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		button_3.setBounds(154, 530, 215, 25);
 		panel.add(button_3);
 		
 		JButton button_4 = new JButton("\u0420\u0430\u0441\u043F\u0435\u0447\u0430\u0442\u0430\u0442\u044C \u0440\u0430\u0441\u0447\u0435\u0442\u043D\u0443\u044E \u0432\u0435\u0434\u043E\u043C\u043E\u0441\u0442\u044C");
+		button_4.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		button_4.setBounds(724, 530, 250, 25);
 		panel.add(button_4);
 		
 		JButton button_5 = new JButton("\u0420\u0430\u0441\u043F\u0435\u0447\u0430\u0442\u0430\u0442\u044C \u0440\u0430\u0441\u0447\u0435\u0442\u043D\u044B\u0435 \u043B\u0438\u0441\u0442\u044B");
+		button_5.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		button_5.setBounds(724, 566, 250, 25);
 		panel.add(button_5);
 		
 		JButton button_6 = new JButton("\u0421\u0444\u043E\u0440\u043C\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0437\u0430\u043F\u0440\u043E\u0441 \u0432 \u0431\u0430\u043D\u043A");
+		button_6.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		button_6.setBounds(984, 530, 250, 25);
 		panel.add(button_6);
 		
 		JButton button_7 = new JButton("\u0412\u044B\u0439\u0442\u0438 \u0432 \u043C\u0435\u043D\u044E");
+		button_7.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		button_7.setBounds(1084, 11, 150, 23);
 		panel.add(button_7);
 		
 		JButton button_8 = new JButton("\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0432\u0435\u0434\u043E\u043C\u043E\u0441\u0442\u044C \u043D\u0430 \u0443\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u0435");
+		button_8.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		button_8.setBounds(379, 530, 250, 25);
 		panel.add(button_8);
 		
 		JButton button_9 = new JButton("\u041F\u0440\u043E\u0441\u043C\u043E\u0442\u0440 \u0440\u0430\u0441\u0447\u0435\u0442\u043D\u043E\u0433\u043E \u043B\u0438\u0441\u0442\u0430");
+		button_9.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		button_9.setBounds(154, 566, 475, 25);
 		panel.add(button_9);
+		
+		JLabel label = new JLabel("\u041D\u043E\u043C\u0435\u0440 \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0430:");
+		label.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		label.setBounds(10, 14, 98, 14);
+		panel.add(label);
+		
+		textField_3 = new JTextField();
+		textField_3.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		textField_3.setColumns(10);
+		textField_3.setBounds(118, 11, 35, 20);
+		panel.add(textField_3);
+		
+		JLabel label_1 = new JLabel("\u0414\u0430\u0442\u0430 \u0441\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u044F:");
+		label_1.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		label_1.setBounds(163, 14, 98, 14);
+		panel.add(label_1);
+		
+		textField_4 = new JTextField();
+		textField_4.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		textField_4.setColumns(10);
+		textField_4.setBounds(271, 11, 100, 20);
+		panel.add(textField_4);
+		
+		JLabel label_2 = new JLabel("\u0441:");
+		label_2.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		label_2.setBounds(379, 34, 9, 14);
+		panel.add(label_2);
+		
+		JLabel label_3 = new JLabel("\u041E\u0442\u0447\u0435\u0442\u043D\u044B\u0439 \u043F\u0435\u0440\u0438\u043E\u0434");
+		label_3.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		label_3.setHorizontalAlignment(SwingConstants.CENTER);
+		label_3.setBounds(379, 11, 260, 14);
+		panel.add(label_3);
+		
+		textField_5 = new JTextField();
+		textField_5.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		textField_5.setColumns(10);
+		textField_5.setBounds(395, 28, 100, 20);
+		panel.add(textField_5);
+		
+		JLabel label_4 = new JLabel("\u043F\u043E:");
+		label_4.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		label_4.setBounds(515, 34, 16, 14);
+		panel.add(label_4);
+		
+		textField_6 = new JTextField();
+		textField_6.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		textField_6.setColumns(10);
+		textField_6.setBounds(539, 28, 100, 20);
+		panel.add(textField_6);
+		
+		JButton button_10 = new JButton("\u0412\u044B\u0447\u0442\u0438 \u0438\u0437 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u044B");
+		button_10.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		button_10.setBounds(1084, 46, 150, 23);
+		panel.add(button_10);
 		
 	}
 }

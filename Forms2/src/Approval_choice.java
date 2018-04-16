@@ -17,6 +17,7 @@ import javax.swing.JToggleButton;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
 import javax.swing.JScrollPane;
+import java.awt.Font;
 
 public class Approval_choice extends JFrame {
 
@@ -42,7 +43,7 @@ public class Approval_choice extends JFrame {
 	 * Create the frame.
 	 */
 	public Approval_choice() {
-		setTitle("Работа с авансами");
+		setTitle("Утверждение документов");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 515, 273);
 		contentPane = new JPanel();
@@ -55,6 +56,7 @@ public class Approval_choice extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel label = new JLabel("Документы, требующие утверждения");
+		label.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setBounds(10, 11, 410, 14);
 		panel.add(label);
@@ -64,6 +66,7 @@ public class Approval_choice extends JFrame {
 		panel.add(scrollPane);
 		
 		JList list = new JList();
+		list.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		scrollPane.setViewportView(list);
 		list.setModel(new AbstractListModel() {
 			String[] values = new String[] {"Проект премиальных коэффициентов [от 04.04.2018 17:57:00] - ожидает утверждения", "Расчетная ведомость [от 04.04.2018 14:25:44] - ожидает утверждения"};
@@ -76,15 +79,32 @@ public class Approval_choice extends JFrame {
 		});
 		
 		JButton button = new JButton("Просмотр документа");
-		button.setBounds(10, 145, 169, 23);
+		button.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		button.setBounds(10, 145, 146, 23);
 		panel.add(button);
 		
 		JButton button_1 = new JButton("Выйти в меню");
-		button_1.setBounds(10, 179, 136, 23);
+		button_1.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		button_1.setBounds(10, 179, 146, 23);
 		panel.add(button_1);
 		
 		JButton button_2 = new JButton("Утвердить");
-		button_2.setBounds(189, 145, 134, 23);
+		button_2.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		button_2.setBounds(335, 145, 134, 23);
 		panel.add(button_2);
+		
+		JButton button_3 = new JButton("Вернуть для правки");
+		button_3.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		button_3.setBounds(166, 145, 159, 23);
+		panel.add(button_3);
+		
+		JButton button_4 = new JButton("Выйти из программы");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_4.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		button_4.setBounds(166, 179, 159, 23);
+		panel.add(button_4);
 	}
 }
